@@ -46,6 +46,26 @@ insert into University (Name, Location) values
 ( 'Sejong University', '32935 Mitchell Road'),
 ( 'Nara Sangyo University', '04213 Havey Point');
 
+insert into University_Course (UniversityId, CourseId) values (2, 11);
+insert into University_Course (UniversityId, CourseId) values (2, 6);
+insert into University_Course (UniversityId, CourseId) values (2, 4);
+insert into University_Course (UniversityId, CourseId) values (1, 8);
+insert into University_Course (UniversityId, CourseId) values (1, 8);
+insert into University_Course (UniversityId, CourseId) values (3, 11);
+insert into University_Course (UniversityId, CourseId) values (3, 7);
+insert into University_Course (UniversityId, CourseId) values (4, 4);
+insert into University_Course (UniversityId, CourseId) values (1, 9);
+insert into University_Course (UniversityId, CourseId) values (4, 11);
+insert into University_Course (UniversityId, CourseId) values (2, 10);
+insert into University_Course (UniversityId, CourseId) values (1, 8);
+insert into University_Course (UniversityId, CourseId) values (4, 6);
+insert into University_Course (UniversityId, CourseId) values (1, 2);
+insert into University_Course (UniversityId, CourseId) values (1, 6);
+insert into University_Course (UniversityId, CourseId) values (4, 4);
+insert into University_Course (UniversityId, CourseId) values (3, 2);
+insert into University_Course (UniversityId, CourseId) values (4, 6);
+insert into University_Course (UniversityId, CourseId) values (3, 3);
+insert into University_Course (UniversityId, CourseId) values (3, 10);
 
 insert into Student (Name, Surname, email, DateBirth, UniversityId, Nationality) values ('Rand', 'Syce', 'rsyce0@pbs.org', '4/9/1998', 1, 'Russia');
 insert into Student (Name, Surname, email, DateBirth, UniversityId, Nationality) values ('Max', 'Jellings', 'mjellings1@gravatar.com', '6/25/2004', 1, 'Russia');
@@ -258,4 +278,4 @@ insert into Course_Lecturer (CourseId, LecturerId) values
 (3, 5),
 (2, 10),
 (1, 2)
->>>>>>> 281ecfc970e98b7535b3b576a64948a29d1bb807
+>>>>>>> dbc460df13277aec5b66d8545697bea8d0789c38
