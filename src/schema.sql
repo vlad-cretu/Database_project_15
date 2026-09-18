@@ -9,20 +9,19 @@ CREATE TABLE student (
     dateOfBirth DATETIME NOT NULL,
     nationality VARCHAR(30) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    universitId BIGINT NOT NULL,
-    Foreign Key (universityId) REFERENCES University(id);
-
+    universityId BIGINT NOT NULL,
+    Foreign Key (universityId) REFERENCES University(id)
 );
 CREATE TABLE University(
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY
-    Name VARCHAR(30) NOT NULL
+    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(30) NOT NULL,
     Location VARCHAR(160) NOT NULL
 );
 
 
 CREATE TABLE Course(
     Id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30) NOT NULL
+    Name VARCHAR(30) NOT NULL,
 );
 
 CREATE TABLE Lecturer (
@@ -34,10 +33,10 @@ CREATE TABLE Lecturer (
 
 
 CREATE TABLE Feedback(
-    Id INTEGER AUTO_INCREMENT PRIMARY KEY
-    Content VARCHAR(100) NOT NULL
-    studentId INTEGER 
-    LectureId INTEGER 
+    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Content VARCHAR(100) NOT NULL,
+    studentId BIGINT,
+    LectureId BIGINT,
 
     FOREIGN KEY (studentId) REFERENCES student(id),
     FOREIGN KEY (LectureId) REFERENCES Lecture(Id)
@@ -48,7 +47,7 @@ CREATE TABLE Lecture (
     Id BIGINT AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(60) NOT NULL,
     DateCreated DATE NOT NULL,
-    LectureId BIGINT FOREIGN KEY REFERENCES Lecturer(Id);
+    LectureId BIGINT FOREIGN KEY REFERENCES Lecturer(Id)
 );
 
 
