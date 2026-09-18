@@ -46,7 +46,7 @@ insert into University (Name, Location) values
 ( 'Sejong University', '32935 Mitchell Road'),
 ( 'Nara Sangyo University', '04213 Havey Point');
 
-<<<<<<< HEAD
+
 insert into Student (Name, Surname, email, DateBirth, UniversityId, Nationality) values ('Rand', 'Syce', 'rsyce0@pbs.org', '4/9/1998', 1, 'Russia');
 insert into Student (Name, Surname, email, DateBirth, UniversityId, Nationality) values ('Max', 'Jellings', 'mjellings1@gravatar.com', '6/25/2004', 1, 'Russia');
 insert into Student (Name, Surname, email, DateBirth, UniversityId, Nationality) values ('Agneta', 'Le Estut', 'aleestut2@drupal.org', '12/23/2000', 4, 'Morocco');
@@ -234,7 +234,7 @@ insert into Feedback (first_name, Content, studentId, LectureId) values ('Clemen
 insert into Feedback (first_name, Content, studentId, LectureId) values ('Virgie', 'internet solution', 11, 10);
 insert into Feedback (first_name, Content, studentId, LectureId) values ('Dwight', 'local area network', 25, 6);
 insert into Feedback (first_name, Content, studentId, LectureId) values ('Gwendolen', 'encryption', 34, 11);
-=======
+
 
 
 insert into Course_Lecturer (CourseId, LecturerId) values
