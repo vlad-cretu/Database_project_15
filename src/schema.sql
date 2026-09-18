@@ -1,4 +1,14 @@
 CREATE TABLE Course(
     Id INTEGER AUTOINCREMENT PRIMARY KEY,
     Name VARCHAR(30)
-)
+);
+
+CREATE TABLE Lecturer (
+    Id INTEGER PRIMARY KEY,
+    Name VARCHAR(30),
+    Surname VARCHAR(30),
+    Email VARCHAR(100)
+);
+
+
+
