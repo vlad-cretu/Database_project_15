@@ -17,7 +17,9 @@ CREATE TABLE University(
     Id BIGINT AUTO_INCREMENT PRIMARY KEY
     Name VARCHAR(30) NOT NULL
     Location VARCHAR(160) NOT NULL
-)
+);
+
+
 CREATE TABLE Course(
     Id BIGINT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(30) NOT NULL
@@ -29,6 +31,8 @@ CREATE TABLE Lecturer (
     Surname VARCHAR(30) NOT NULL,
     Email VARCHAR(100) NOT NULL
 );
+
+
 CREATE TABLE Feedback(
     Id INTEGER AUTO_INCREMENT PRIMARY KEY
     Content VARCHAR(100) NOT NULL
@@ -45,7 +49,9 @@ CREATE TABLE Lecture (
     Title VARCHAR(60) NOT NULL,
     DateCreated DATE NOT NULL,
     LectureId BIGINT FOREIGN KEY REFERENCES Lecturer(Id);
-)
+);
+
+
 CREATE TABLE Course_Lecturer (
     Id BIGINT AUTO_INCREMENT PRIMARY KEY,
     CourseId BIGINT,
@@ -61,5 +67,5 @@ CREATE TABLE University_Course (
     CourseId BIGINT,
     FOREIGN KEY (UniversityId) REFERENCES University(Id),
     FOREIGN KEY (CourseId) REFERENCES Course(Id)
-)
+);
 
