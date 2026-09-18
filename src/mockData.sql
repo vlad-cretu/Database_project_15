@@ -46,3 +46,26 @@ insert into University (Id, Name, Location) values
 (3, 'Sejong University', '32935 Mitchell Road'),
 (4, 'Nara Sangyo University', '04213 Havey Point');
 
+
+
+insert into Course_Lecturer (CourseId, LecturerId) values
+(3, 2),
+(5, 12),
+(1, 4),
+(2, 5),
+(2, 2),
+(3, 1),
+(8, 8),
+(5, 8),
+(9, 11),
+(10, 11),
+(3, 4),
+(6, 3),
+(6, 9),
+(7, 6),
+(7, 1),
+(8, 10),
+(8, 2),
+(3, 5),
+(2, 10),
+(1, 2)
