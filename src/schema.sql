@@ -5,9 +5,9 @@ CREATE TABLE Course(
 
 CREATE TABLE Lecturer (
     Id INTEGER PRIMARY KEY,
-    Name VARCHAR(30),
-    Surname VARCHAR(30),
-    Email VARCHAR(100)
+    Name VARCHAR(30) NOT NULL,
+    Surname VARCHAR(30) NOT NULL,
+    Email VARCHAR(100) NOT NULL
 );
 
 
