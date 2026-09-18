@@ -46,3 +46,23 @@ insert into University (Name, Location) values
 ( 'Sejong University', '32935 Mitchell Road'),
 ( 'Nara Sangyo University', '04213 Havey Point');
 
+insert into University_Course (UniversityId, CourseId) values (2, 11);
+insert into University_Course (UniversityId, CourseId) values (2, 6);
+insert into University_Course (UniversityId, CourseId) values (2, 4);
+insert into University_Course (UniversityId, CourseId) values (1, 8);
+insert into University_Course (UniversityId, CourseId) values (1, 8);
+insert into University_Course (UniversityId, CourseId) values (3, 11);
+insert into University_Course (UniversityId, CourseId) values (3, 7);
+insert into University_Course (UniversityId, CourseId) values (4, 4);
+insert into University_Course (UniversityId, CourseId) values (1, 9);
+insert into University_Course (UniversityId, CourseId) values (4, 11);
+insert into University_Course (UniversityId, CourseId) values (2, 10);
+insert into University_Course (UniversityId, CourseId) values (1, 8);
+insert into University_Course (UniversityId, CourseId) values (4, 6);
+insert into University_Course (UniversityId, CourseId) values (1, 2);
+insert into University_Course (UniversityId, CourseId) values (1, 6);
+insert into University_Course (UniversityId, CourseId) values (4, 4);
+insert into University_Course (UniversityId, CourseId) values (3, 2);
+insert into University_Course (UniversityId, CourseId) values (4, 6);
+insert into University_Course (UniversityId, CourseId) values (3, 3);
+insert into University_Course (UniversityId, CourseId) values (3, 10);
