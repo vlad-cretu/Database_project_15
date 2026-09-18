@@ -29,3 +29,12 @@ CREATE TABLE Course_Lecturer (
     FOREIGN KEY (LecturerId) REFERENCES Lecturer(Id)
 );
 
+
+CREATE TABLE University_Course (
+    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    UniversityId BIGINT,
+    CourseId BIGINT,
+    FOREIGN KEY (UniversityId) REFERENCES University(Id),
+    FOREIGN KEY (CourseId) REFERENCES Course(Id)
+)
+
