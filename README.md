@@ -10,6 +10,8 @@ Lecture: stores lecture title and creation date, linked to a Lecturer
 Feedback: stores feedback content, linked to a student and a lecture
 Course_Lecturer: junction table linking courses to the lecturers who teach them (many-to-many)
 
+[ER diagram](ERD.pdf)
+
 ## Relationships
 Each Lecture belongs to one Lecturer
 Each Feedback entry belongs to one Lecture and one Student
@@ -28,6 +30,9 @@ Run the table creation scripts in order, since foreign key constraints require r
 - Course_Lecturer
 - Student
 - Feedback
+
+
+
 
 
 ---
