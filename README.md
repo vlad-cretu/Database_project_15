@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/9ce619ef-e6f9-4e9a-b824-f1802b30f310
 Two different open-source datasets were integrated to test our schema. The data was decoupled so the universities do not need to match the schools in the lecturer feedback. 
 
 ### Source 1: All Universities in the World (Kaggle)
-- Source: Kaggle: All Universities in the World
+    - Source: Kaggle: All Universities in the World(https://www.kaggle.com/datasets/thedevastator/all-universities-in-the-world?resource=download)
 
 - Mapping:
 
@@ -53,4 +53,18 @@ Two different open-source datasets were integrated to test our schema. The data 
     - Column Pruning: Dropped the website URL column because it falls outside the scope of our database.
     - Schema Update (Name): Increased the name data type from VARCHAR(30) to VARCHAR(120) to accommodate longer, real-world university names.
     - Schema Update (Location): Changed the location data type from VARCHAR(30) to CHAR(2) to strictly format for the 2-letter country codes provided in the dataset.
+ 
+### Source 2: Professor Teaching Evaluations
+    - Source: Mendeley: RateMyProfessor Dataset(https://data.mendeley.com/datasets/fvtfjyvw7d/1)
+    
+- Mapping:
+
+    - The Id attribute for the Lecturer entity is auto-incremented by the database.
+    - The professor_name column maps to the Lecturer name and surname attributes.
+
+- Data Cleaning & Schema Updates:
+
+    - String Splitting: The single professor_name string (e.g., "Pierre Hadaya") was split into separate name and surname columns to match the database schema.
+    - Data Generation: Since the dataset lacks emails, mock email addresses were generated and inserted to fulfill the schema's requirements.
+    - Column Pruning: Dropped all remaining, unnecessary columns from the dataset (such as school_name, department_name, and comments).
 
