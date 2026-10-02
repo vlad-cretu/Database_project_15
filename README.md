@@ -68,3 +68,17 @@ Two different open-source datasets were integrated to test our schema. The data 
     - Data Generation: Since the dataset lacks emails, mock email addresses were generated and inserted to fulfill the schema's requirements.
     - Column Pruning: Dropped all remaining, unnecessary columns from the dataset (such as school_name, department_name, and comments).
 
+## Are the queries yielding meaningful results?
+
+Partially. Queries execute and yield the proper form of answer, but they are only as meaningful as the input data used.
+
+What works well: the universities and lecturers have been added from realistic data, hence any query listing or counting them yields meaningful output.
+
+What is still not meaningful: the feedback-based queries constitute the essence of the stakeholder case, but they are dependent on the Feedback, Lecture and Student tables to have realistic and unequal amounts of data. Where there is little or even distribution of feedback, then the query "which lectures receive the most feedback" yields nothing meaningful. The feedback table does not have a rating, only a comment; hence we can count but not distinguish the quality of feedback. Feedback lacks a submission date, thus trends of feedback across a semester cannot be established.
+
+### Requirements for updates:
+
+Rating 1 to 5 to feedback to rate the sentiment of feedback not the volume.
+Submission Date to feedback to be able to establish trends.
+Realistic and unequal data populated in the Feedback, Lecture and Student table.
+Student enrollment linked to course.
