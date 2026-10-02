@@ -10,7 +10,7 @@ Lecture: stores lecture title and creation date, linked to a Lecturer
 Feedback: stores feedback content, linked to a student and a lecture
 Course_Lecturer: junction table linking courses to the lecturers who teach them (many-to-many)
 
-[ER diagram](ERD.pdf)
+[ER diagram](./Week_2/ERD.pdf)
 
 ## Relationships
 Each Lecture belongs to one Lecturer
