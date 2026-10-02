@@ -30,6 +30,22 @@ Run the table creation scripts in order, since foreign key constraints require r
 - Feedback
 
 
-_Notes_
+---
 
-The Feedback table references a Student table that isn't yet part of this schema and will need to be added before Feedback can be created successfully.
+## Data Integration and Transformation
+Two different open-source datasets were integrated to test our schema. The data was decoupled so the universities do not need to match the schools in the lecturer feedback. 
+
+### Source 1: All Universities in the World (Kaggle)
+- Source: Kaggle: All Universities in the World
+
+- Mapping:
+
+    - The university name column maps to the University name attribute.
+    - The country code column (e.g., "AD", "AE") maps to the University location attribute.
+
+- Data Cleaning & Schema Updates:
+
+    - Column Pruning: Dropped the website URL column because it falls outside the scope of our database.
+    - Schema Update (Name): Increased the name data type from VARCHAR(30) to VARCHAR(120) to accommodate longer, real-world university names.
+    - Schema Update (Location): Changed the location data type from VARCHAR(30) to CHAR(2) to strictly format for the 2-letter country codes provided in the dataset.
+
