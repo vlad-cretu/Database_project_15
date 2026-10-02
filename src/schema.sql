@@ -1,17 +1,7 @@
-CREATE DATABASE feedbackSystem;
+CREATE DATABASE IF NOT EXISTS feedbackSystem;
 
 USE feedbackSystem;
 
-CREATE TABLE student (
-    id BIGINT PRIMARY KEY,
-    firstname VARCHAR(30) NOT NULL,
-    lastname VARCHAR(30) NOT NULL,
-    dateOfBirth DATETIME NOT NULL,
-    nationality VARCHAR(30) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    universityId BIGINT NOT NULL,
-    Foreign Key (universityId) REFERENCES University(id)
-);
 CREATE TABLE University(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
@@ -31,6 +21,24 @@ CREATE TABLE Lecturer (
     email VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE student (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    dateOfBirth DATETIME NOT NULL,
+    nationality VARCHAR(30) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    universityId BIGINT NOT NULL,
+    Foreign Key (universityId) REFERENCES University(id)
+);
+
+CREATE TABLE Lecture (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(60) NOT NULL,
+    DateCreated DATE NOT NULL,
+    lecturerid BIGINT REFERENCES Lecturer(id),
+    courseid BIGINT REFERENCES Course(id)
+);
 
 CREATE TABLE Feedback(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -40,15 +48,6 @@ CREATE TABLE Feedback(
 
     FOREIGN KEY (studentId) REFERENCES student(id),
     FOREIGN KEY (LectureId) REFERENCES Lecture(id)
-);
-
-
-CREATE TABLE Lecture (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    Title VARCHAR(60) NOT NULL,
-    DateCreated DATE NOT NULL,
-    lecturerid BIGINT REFERENCES Lecturer(id),
-    courseid BIGINT REFERENCES Course(id)
 );
 
 

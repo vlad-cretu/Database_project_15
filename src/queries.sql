@@ -20,3 +20,33 @@ FROM student(INNER JOIN Feedback ON student.id = Feedback.Id
             (INNER JOIN Lecturer ON Lecture.Id = Lecturer.Id)))
 WHERE Lecturer.name = "Osbourne"
 GROUP BY student.id;
+
+
+-- Query 3: List lecturers who teach more courses than the average number of courses taught by lecturers.
+SELECT lec.Id, lec.Name, lec.Surname
+FROM Lecturer lec
+JOIN Course_Lecturer cl ON lec.Id = cl.LecturerId
+GROUP BY lec.Id, lec.Name, lec.Surname
+HAVING COUNT(DISTINCT cl.CourseId) > (
+    SELECT AVG(course_count)
+    FROM (
+        SELECT COUNT(DISTINCT cl2.CourseId) AS course_count
+        FROM Lecturer lec2
+        JOIN Course_Lecturer cl2 ON lec2.Id = cl2.LecturerId
+        GROUP BY lec2.Id
+    )
+);
+
+-- Query 4: List of all courses that have more lectures than the average number of lecturers per course.
+SELECT c.name
+FROM Course c INNER JOIN Lecture l ON c.id = l.courseid
+GROUP BY c.id
+HAVING COUNT(l.id) > (
+    SELECT AVG(lecture_count)
+    FROM (
+        select COUNT(DISTINCT l1.id) AS lecture_count
+        FROM lecture l1
+        GROUP BY l1.courseid
+    )
+)
+
