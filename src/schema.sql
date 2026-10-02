@@ -13,58 +13,59 @@ CREATE TABLE student (
     Foreign Key (universityId) REFERENCES University(id)
 );
 CREATE TABLE University(
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30) NOT NULL,
-    Location VARCHAR(160) NOT NULL
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    location VARCHAR(160) NOT NULL
 );
 
 
 CREATE TABLE Course(
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30) NOT NULL
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Lecturer (
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30) NOT NULL,
-    Surname VARCHAR(30) NOT NULL,
-    Email VARCHAR(100) NOT NULL
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    location VARCHAR(30) NOT NULL,
+    email VARCHAR(100) NOT NULL
 );
 
 
 CREATE TABLE Feedback(
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     Content VARCHAR(100) NOT NULL,
-    studentId BIGINT,
-    LectureId BIGINT,
+    studentId BIGINT NOT NULL,
+    LectureId BIGINT NOT NULL,
 
     FOREIGN KEY (studentId) REFERENCES student(id),
-    FOREIGN KEY (LectureId) REFERENCES Lecture(Id)
+    FOREIGN KEY (LectureId) REFERENCES Lecture(id)
 );
 
 
 CREATE TABLE Lecture (
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(60) NOT NULL,
     DateCreated DATE NOT NULL,
-    LectureId BIGINT REFERENCES Lecturer(Id)
+    lecturerid BIGINT REFERENCES Lecturer(id),
+    courseid BIGINT REFERENCES Course(id)
 );
 
 
 CREATE TABLE Course_Lecturer (
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     CourseId BIGINT,
     LecturerId BIGINT,
-    FOREIGN KEY (CourseId) REFERENCES Course(Id),
-    FOREIGN KEY (LecturerId) REFERENCES Lecturer(Id)
+    FOREIGN KEY (CourseId) REFERENCES Course(id),
+    FOREIGN KEY (LecturerId) REFERENCES Lecturer(id)
 );
 
 
 CREATE TABLE University_Course (
-    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     UniversityId BIGINT,
     CourseId BIGINT,
-    FOREIGN KEY (UniversityId) REFERENCES University(Id),
-    FOREIGN KEY (CourseId) REFERENCES Course(Id)
+    FOREIGN KEY (UniversityId) REFERENCES University(id),
+    FOREIGN KEY (CourseId) REFERENCES Course(id)
 );
 
