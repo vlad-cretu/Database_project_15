@@ -1,5 +1,4 @@
 1. Which students have given feedback to lectures taught by a specific lecturer?
 2. Which students have given feedback to all lectures of a particular course?
-3. List all courses that have more lectures than the average number of lectures per course.
-4. Which students have given feedback to all lectures of a particular course?
-5. List lecturers who teach more courses than the average number of courses taught by lecturers.
+3. Which students have given feedback to all lectures of a particular course?
+4. List lecturers who teach more courses than the average number of courses taught by lecturers.
