@@ -14,8 +14,8 @@ CREATE TABLE student (
 );
 CREATE TABLE University(
     Id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30) NOT NULL,
-    Location VARCHAR(160) NOT NULL
+    Name VARCHAR(120) NOT NULL,
+    Location CHAR(2) NOT NULL
 );
 
 
