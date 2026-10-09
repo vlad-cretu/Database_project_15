@@ -14,12 +14,13 @@ WHERE NOT EXISTS (
 );
 -- Query 1: Which students have given feedback to lectures taught by a specific lecturer?
 
-SELECT student.id, student.firstname, student.lastname
-FROM student(INNER JOIN Feedback ON student.id = Feedback.Id
-            (INNER JOIN Lecture ON Feedback.Id = Lecture.Id 
-            (INNER JOIN Lecturer ON Lecture.Id = Lecturer.Id)))
-WHERE Lecturer.name = "Osbourne"
-GROUP BY student.id;
+SELECT Student.Id, Student.Name, Student.Surname
+FROM Student
+INNER JOIN Feedback ON Student.Id = Feedback.StudentId
+INNER JOIN Lecture ON Feedback.LectureId = Lecture.Id
+INNER JOIN Lecturer ON Lecture.LecturerId = Lecturer.Id
+WHERE Lecturer.Surname = 'Clavin'
+GROUP BY Student.Id, Student.Name, Student.Surname;
 
 -- New query 1: For each course, how many different students have given feedback on its lectures? (Fener27)
 SELECT c.Id, c.Name,
@@ -49,8 +50,8 @@ GROUP BY Lecture.Id, Lecture.Title
 ORDER BY number_of_feedback DESC;
 
 -- 7. How many students does each university have ? (Nezar)
-SELECT University.Name, COUNT(student.id) AS number_of_students
+SELECT University.Name, COUNT(Student.Id) AS number_of_students
 FROM University
-JOIN student ON student.universityId = University.Id
+JOIN Student ON Student.UniversityId = University.Id
 GROUP BY University.Id, University.Name
 ORDER BY number_of_students DESC;
