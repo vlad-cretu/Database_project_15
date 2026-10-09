@@ -82,11 +82,11 @@ Here are the queries documented.
 - **Question:** Lists the students who gave feedback on the lectures of one lecturer.
 - **Relevance:** Shows a lecturer who is actually giving them feedback. This helps the lecturer judge how representative the feedback is and follow up with those students to clarify what was unclear.
 
-### New query 1: For each course, how many different students have given feedback on its lectures?
+### New query 1: For each course, how many different students have given feedback on its lectures? (Fener27)
 - **Question:** Counts per course the number of distinct students who gave feedback on any of its lectures, from most to fewest.
 - **Relevance:** Feedback is only actionable if enough students take part. Courses with few or no students giving feedback are blind spots where the education committee cannot judge lecture clarity, so it knows where to encourage students to give feedback.
 
-### New query 2: Which lectures have not received any feedback yet, and who teaches them? (Vlad A.)
+### New query 2: Which lectures have not received any feedback yet, and who teaches them? (Fener27)
 - **Question:** Lists every lecture without any feedback, together with its lecturer, oldest first.
 - **Relevance:** A lecture without feedback cannot be evaluated or improved. Lecturers can see which of their lectures still need input and ask students for it, and old lectures that still have no feedback point to a gap in how feedback is collected.
 
