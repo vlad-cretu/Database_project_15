@@ -90,7 +90,13 @@ Here are the queries documented.
 - **Question:** Lists every lecture without any feedback, together with its lecturer, oldest first.
 - **Relevance:** A lecture without feedback cannot be evaluated or improved. Lecturers can see which of their lectures still need input and ask students for it, and old lectures that still have no feedback point to a gap in how feedback is collected.
 
+### New query 3: Which lectures receives the most student feedback ?(neyzar7)
+- **Question:** Lists the lectures with the most feedbacks
+- **Relevance:** This shows which lectures get the most attention from students. This helps lecturers know to consult these first since they have the most engagement. 
 
+### New query 4: How many students does each university have ? (neyzar7)
+- **Question:** Counts the number of students per university
+- **Relevance:** It shows how many people at each university could use the feedback system. It helps us see where the system reaches the most students and the universities that have a few registered students. This gives us a feedback to learn from by asking the lowest and highest university why they have many or few students registered.
 
 ## Are the queries yielding meaningful results?
 
