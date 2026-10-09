@@ -90,7 +90,32 @@ Here are the queries documented.
 - **Question:** Lists every lecture without any feedback, together with its lecturer, oldest first.
 - **Relevance:** A lecture without feedback cannot be evaluated or improved. Lecturers can see which of their lectures still need input and ask students for it, and old lectures that still have no feedback point to a gap in how feedback is collected.
 
+### New query 3: Which lectures receives the most student feedback ?(neyzar7)
+- **Question:** Lists the lectures with the most feedbacks
+- **Relevance:** This shows which lectures get the most attention from students. This helps lecturers know to consult these first since they have the most engagement. 
 
+### New query 4: How many students does each university have ? (neyzar7)
+- **Question:** Counts the number of students per university
+- **Relevance:** It shows how many people at each university could use the feedback system. It helps us see where the system reaches the most students and the universities that have a few registered students. This gives us a feedback to learn from by asking the lowest and highest university why they have many or few students registered.
+
+### New Query 5: Which Students have submitted no feedback to any given lecture? (DavidNgounou)
+-**Relevance** This query can help to a university to evaluate the efficiency of student engagement by identifying students who have not provided any feedback.
+With such a query the university can take necessary actions to improve student participation and feedback collection.
+
+### New Query 6: Which courses offered by a university have the least amount of feedback. (DavidNgounou)
+=**Relevance** 
+This query identifies courses that have received less feedback compared to all other courses.
+It can help to identify courses that may need more attention or improvement in order to increase student engagement and feedback.
+
+### New Query 7: Which lecturers are getting the most varied feedback from the students? (vlad-cretu)
+
+Question: Calculates the number of unique students who submitted feedback to each lecturer in each of his/her lectures
+Relevance: This indicates the breadth of each lecturer's interaction with the students, rather than the number of responses received. Breadth ensures that the feedback represents the whole class and therefore provides valuable input for teaching improvement. It also draws attention to lecturers whose feedback comes from a very narrow segment of the class, where engagement needs to be fostered.
+
+### New Query 8: Which lectures have received zero feedback? (vlad-cretu)
+
+Question: Lists the lectures without any feedback submissions
+Relevance: There is information even in silence. The lectures listed here are not receiving any student feedback possibly due to lack of reminders or because the feedback does not seem important to the students. Identifying such lectures will enable the university to deal with them, thereby achieving our aim of receiving the feedback during the course.
 
 ## Are the queries yielding meaningful results?
 

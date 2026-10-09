@@ -41,6 +41,7 @@ WHERE NOT EXISTS (
     WHERE f.LectureId = l.Id
 )
 ORDER BY l.DateCreated;
+
 -- 6. Which lectures receives the most student feedback ?(Nezar)
 
 SELECT Lecture.Title, COUNT(Feedback.Id) AS number_of_feedback
@@ -55,3 +56,53 @@ FROM University
 JOIN Student ON Student.UniversityId = University.Id
 GROUP BY University.Id, University.Name
 ORDER BY number_of_students DESC;
+
+
+
+-- 7. Which students have not given feedback to any lecture?(David)
+-- This query can help to a university to evaluate the efficiency of student engagement by identifying students who have not provided any feedback.
+-- With such a query the university can take necessary actions to improve student participation and feedback collection.
+SELECT s.Id, s.Name, s.Surname
+FROM Student s
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM Feedback f
+    WHERE f.StudentId = s.Id
+);
+
+
+-- 8. Courses with feedback lower than all the other courses.(David)
+-- This query identifies courses that have received less feedback compared to all other courses.
+-- It can help to identify courses that may need more attention or improvement in order to increase student engagement and feedback.
+SELECT c.Title, COUNT(f.Id) AS number_of_feedback
+FROM Course c
+LEFT JOIN Lecture l ON l.CourseId = c.Id
+LEFT JOIN Feedback f ON f.LectureId = l.Id
+GROUP BY c.Id, c.Title
+HAVING COUNT(f.Id) < ALL (
+    SELECT COUNT(f2.Id)
+    FROM Course c2
+    LEFT JOIN Lecture l2 ON l2.CourseId = c2.Id
+    LEFT JOIN Feedback f2 ON f2.LectureId = l2.Id
+    GROUP BY c2.Id
+)
+ORDER BY number_of_feedback ASC;
+
+-- Query 9
+-- Question: Which lectures received the most student feedback?
+-- Relevance: Lectures with a lot of feedback show where students reacted most
+-- strongly. This helps lecturers see which sessions engaged students the most,
+-- which is the core goal of our platform: surfacing feedback while the course
+-- is still running instead of only at the end.
+SELECT l.Title, COUNT(f.Id) AS feedback_count
+FROM Lecture l
+JOIN Feedback f ON f.LectureID = l.Id
+GROUP BY l.Id
+ORDER BY feedback_count DESC
+LIMIT 10;
+
+-- Query 10: Which lectures have received no feedback at all?
+SELECT l.Title, l.DateCreated
+FROM Lecture l
+LEFT JOIN Feedback f ON f.LectureID = l.Id
+WHERE f.Id IS NULL;
