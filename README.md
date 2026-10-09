@@ -98,6 +98,15 @@ Here are the queries documented.
 - **Question:** Counts the number of students per university
 - **Relevance:** It shows how many people at each university could use the feedback system. It helps us see where the system reaches the most students and the universities that have a few registered students. This gives us a feedback to learn from by asking the lowest and highest university why they have many or few students registered.
 
+### New Query 5: Which Students have submitted no feedback to any given lecture? (DavidNgounou)
+-**Relevance** This query can help to a university to evaluate the efficiency of student engagement by identifying students who have not provided any feedback.
+With such a query the university can take necessary actions to improve student participation and feedback collection.
+
+### New Query 6: Which courses offered by a university have the least amount of feedback. (DavidNgounou)
+=**Relevance** 
+This query identifies courses that have received less feedback compared to all other courses.
+It can help to identify courses that may need more attention or improvement in order to increase student engagement and feedback.
+
 ## Are the queries yielding meaningful results?
 
 Partially. Queries execute and yield the proper form of answer, but they are only as meaningful as the input data used.
