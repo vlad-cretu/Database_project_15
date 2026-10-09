@@ -107,6 +107,16 @@ With such a query the university can take necessary actions to improve student p
 This query identifies courses that have received less feedback compared to all other courses.
 It can help to identify courses that may need more attention or improvement in order to increase student engagement and feedback.
 
+### New Query 7: Which lecturers are getting the most varied feedback from the students? (vlad-cretu)
+
+Question: Calculates the number of unique students who submitted feedback to each lecturer in each of his/her lectures
+Relevance: This indicates the breadth of each lecturer's interaction with the students, rather than the number of responses received. Breadth ensures that the feedback represents the whole class and therefore provides valuable input for teaching improvement. It also draws attention to lecturers whose feedback comes from a very narrow segment of the class, where engagement needs to be fostered.
+
+### New Query 8: Which lectures have received zero feedback? (vlad-cretu)
+
+Question: Lists the lectures without any feedback submissions
+Relevance: There is information even in silence. The lectures listed here are not receiving any student feedback possibly due to lack of reminders or because the feedback does not seem important to the students. Identifying such lectures will enable the university to deal with them, thereby achieving our aim of receiving the feedback during the course.
+
 ## Are the queries yielding meaningful results?
 
 Partially. Queries execute and yield the proper form of answer, but they are only as meaningful as the input data used.
