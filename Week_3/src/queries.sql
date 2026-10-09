@@ -21,6 +21,25 @@ FROM student(INNER JOIN Feedback ON student.id = Feedback.Id
 WHERE Lecturer.name = "Osbourne"
 GROUP BY student.id;
 
+-- New query 1: For each course, how many different students have given feedback on its lectures? (Fener27)
+SELECT c.Id, c.Name,
+       COUNT(DISTINCT f.studentId) AS StudentsGivingFeedback
+FROM Course c
+LEFT JOIN Course_Lecturer cl ON cl.CourseId = c.Id
+LEFT JOIN Lecture l ON l.LecturerId = cl.LecturerId
+LEFT JOIN Feedback f ON f.LectureId = l.Id
+GROUP BY c.Id, c.Name
+ORDER BY StudentsGivingFeedback DESC;
+
+-- New query 2: Which lectures have not received any feedback yet, and who teaches them? (Fener27)
+SELECT l.Id, l.Title, l.DateCreated, lec.Name, lec.Surname
+FROM Lecture l
+JOIN Lecturer lec ON l.LecturerId = lec.Id
+WHERE NOT EXISTS (
+    SELECT 1 FROM Feedback f
+    WHERE f.LectureId = l.Id
+)
+ORDER BY l.DateCreated;
 -- 6. Which lectures receives the most student feedback ?(Nezar)
 
 SELECT Lecture.Title, COUNT(Feedback.Id) AS number_of_feedback

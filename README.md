@@ -68,6 +68,36 @@ Two different open-source datasets were integrated to test our schema. The data 
     - Data Generation: Since the dataset lacks emails, mock email addresses were generated and inserted to fulfill the schema's requirements.
     - Column Pruning: Dropped all remaining, unnecessary columns from the dataset (such as school_name, department_name, and comments).
 
+## Queries
+
+All queries are in [queries.sql](./Week_3/src/queries.sql).
+
+Here are the queries documented.
+
+### Which students have given feedback to all lectures of a particular course?
+- **Question:** Lists the students who left feedback on every lecture of a given course.
+- **Relevance:** These students followed the whole course and commented on all of it, so their feedback covers the full course. Lecturers and the education committee can use them as the most reliable source when evaluating a course as a whole or invite them to a course evaluation panel.
+
+### Query 1: Which students have given feedback to lectures taught by a specific lecturer?
+- **Question:** Lists the students who gave feedback on the lectures of one lecturer.
+- **Relevance:** Shows a lecturer who is actually giving them feedback. This helps the lecturer judge how representative the feedback is and follow up with those students to clarify what was unclear.
+
+### New query 1: For each course, how many different students have given feedback on its lectures? (Fener27)
+- **Question:** Counts per course the number of distinct students who gave feedback on any of its lectures, from most to fewest.
+- **Relevance:** Feedback is only actionable if enough students take part. Courses with few or no students giving feedback are blind spots where the education committee cannot judge lecture clarity, so it knows where to encourage students to give feedback.
+
+### New query 2: Which lectures have not received any feedback yet, and who teaches them? (Fener27)
+- **Question:** Lists every lecture without any feedback, together with its lecturer, oldest first.
+- **Relevance:** A lecture without feedback cannot be evaluated or improved. Lecturers can see which of their lectures still need input and ask students for it, and old lectures that still have no feedback point to a gap in how feedback is collected.
+
+### New query 3: Which lectures receives the most student feedback ?(neyzar7)
+- **Question:** Lists the lectures with the most feedbacks
+- **Relevance:** This shows which lectures get the most attention from students. This helps lecturers know to consult these first since they have the most engagement. 
+
+### New query 4: How many students does each university have ? (neyzar7)
+- **Question:** Counts the number of students per university
+- **Relevance:** It shows how many people at each university could use the feedback system. It helps us see where the system reaches the most students and the universities that have a few registered students. This gives us a feedback to learn from by asking the lowest and highest university why they have many or few students registered.
+
 ## Are the queries yielding meaningful results?
 
 Partially. Queries execute and yield the proper form of answer, but they are only as meaningful as the input data used.
