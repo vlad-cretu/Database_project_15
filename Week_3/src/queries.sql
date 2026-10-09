@@ -100,15 +100,8 @@ GROUP BY l.Id
 ORDER BY feedback_count DESC
 LIMIT 10;
 
--- Query 10
--- Question: Which lecturers receive feedback from the most distinct students?
--- Relevance: Counting distinct students per lecturer shows how broadly each
--- lecturer is reaching their audience, not just how many comments they got.
--- This matters to our problem because wide student reach means the feedback is
--- representative, which is what makes it useful for improving teaching.
-SELECT lec.Name, lec.Surname, COUNT(DISTINCT f.studentID) AS students_reached
-FROM Lecturer lec
-JOIN Lecture l ON l.LecturerId = lec.Id
-JOIN Feedback f ON f.LectureID = l.Id
-GROUP BY lec.Id
-ORDER BY students_reached DESC;
+-- Query 10: Which lectures have received no feedback at all?
+SELECT l.Title, l.DateCreated
+FROM Lecture l
+LEFT JOIN Feedback f ON f.LectureID = l.Id
+WHERE f.Id IS NULL;
