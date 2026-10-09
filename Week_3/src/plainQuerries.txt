@@ -3,3 +3,5 @@
 3. List all courses that have more lectures than the average number of lectures per course.
 4. Which students have given feedback to all lectures of a particular course?
 5. List lecturers who teach more courses than the average number of courses taught by lecturers.
+6. Which lectures receives the most student feedback ?(Nezar)
+7. How many students does each university have ? (Nezar)

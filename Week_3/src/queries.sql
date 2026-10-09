@@ -40,3 +40,17 @@ WHERE NOT EXISTS (
     WHERE f.LectureId = l.Id
 )
 ORDER BY l.DateCreated;
+-- 6. Which lectures receives the most student feedback ?(Nezar)
+
+SELECT Lecture.Title, COUNT(Feedback.Id) AS number_of_feedback
+FROM Lecture
+JOIN Feedback ON Feedback.LectureId = Lecture.Id
+GROUP BY Lecture.Id, Lecture.Title
+ORDER BY number_of_feedback DESC;
+
+-- 7. How many students does each university have ? (Nezar)
+SELECT University.Name, COUNT(student.id) AS number_of_students
+FROM University
+JOIN student ON student.universityId = University.Id
+GROUP BY University.Id, University.Name
+ORDER BY number_of_students DESC;
