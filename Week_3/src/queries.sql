@@ -40,6 +40,7 @@ WHERE NOT EXISTS (
     WHERE f.LectureId = l.Id
 )
 ORDER BY l.DateCreated;
+
 -- 6. Which lectures receives the most student feedback ?(Nezar)
 
 SELECT Lecture.Title, COUNT(Feedback.Id) AS number_of_feedback
@@ -85,3 +86,29 @@ HAVING COUNT(f.Id) < ALL (
     GROUP BY c2.Id
 )
 ORDER BY number_of_feedback ASC;
+
+-- Query 9
+-- Question: Which lectures received the most student feedback?
+-- Relevance: Lectures with a lot of feedback show where students reacted most
+-- strongly. This helps lecturers see which sessions engaged students the most,
+-- which is the core goal of our platform: surfacing feedback while the course
+-- is still running instead of only at the end.
+SELECT l.Title, COUNT(f.Id) AS feedback_count
+FROM Lecture l
+JOIN Feedback f ON f.LectureID = l.Id
+GROUP BY l.Id
+ORDER BY feedback_count DESC
+LIMIT 10;
+
+-- Query 10
+-- Question: Which lecturers receive feedback from the most distinct students?
+-- Relevance: Counting distinct students per lecturer shows how broadly each
+-- lecturer is reaching their audience, not just how many comments they got.
+-- This matters to our problem because wide student reach means the feedback is
+-- representative, which is what makes it useful for improving teaching.
+SELECT lec.Name, lec.Surname, COUNT(DISTINCT f.studentID) AS students_reached
+FROM Lecturer lec
+JOIN Lecture l ON l.LecturerId = lec.Id
+JOIN Feedback f ON f.LectureID = l.Id
+GROUP BY lec.Id
+ORDER BY students_reached DESC;
